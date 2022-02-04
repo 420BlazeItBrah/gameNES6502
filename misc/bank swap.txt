@@ -1,0 +1,26 @@
+  lda #%00000000
+  STA $8000
+  
+  .segment "RODATA"
+banktable:              ; Write to this table to switch banks.
+  .byte $00, $01, $02, $03, $04, $05, $06
+  .byte $07, $08, $09, $0A, $0B, $0C, $0D, $0E
+  ; UNROM needs only the first line of this table (0-6)
+  ; but UOROM needs both lines (0-14).
+
+.segment "ZEROPAGE":    ; The mapper is read-only; need to track its state separately
+current_bank: .res 1
+
+.segment "CODE"
+bankswitch_y:
+  sty current_bank      ; save the current bank in RAM so the NMI handler can restore it
+bankswitch_nosave:
+  lda banktable, y      ; read a byte from the banktable
+  sta banktable, y      ; and write it back, switching banks
+  rts
+  
+   ldy #$02
+  jsr bankswitch_y     ;switch to bank 2
+  
+  
+  https://wiki.nesdev.org/w/index.php?title=Programming_UNROM

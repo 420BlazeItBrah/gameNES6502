@@ -1,0 +1,24 @@
+; chrbanks.asm
+LoadSpritesLoop                  = $C059
+LoadPalettes                     = $C03D
+Bankvalues                       = $C0C3
+LatchController                  = $C07B
+Forever                          = $C06E
+palette                          = $E000
+LoadPalettesLoop                 = $C04C
+ReadBDone                        = $C0A5
+ReadStart                        = $C0B1
+LoadSprites                      = $C057
+ReadA                            = $C085
+ReadB                            = $C095
+vblankwait1                      = $C014
+vblankwait2                      = $C038
+ReadStartDone                    = $C0BD
+clrmem                           = $C019
+RESET                            = $C000
+Bankswitch                       = $C0BE
+sprites                          = $E020
+ReadADone                        = $C095
+ReadSelectDone                   = $C0B1
+ReadSelect                       = $C0A5
+NMI                              = $C071

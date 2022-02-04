@@ -1,0 +1,3 @@
+SET ARG=%1
+CP %1 %ARG:~0,-4%"PAL
+MV %ARG:~0,-4%"PAL PALETTES

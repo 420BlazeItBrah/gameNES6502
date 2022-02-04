@@ -1,2 +1,2 @@
-nesasm3 main.asm
-main.nes
+tools\\NESASM3 MAIN.ASM
+MAIN.NES

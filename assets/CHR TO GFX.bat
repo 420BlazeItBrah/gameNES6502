@@ -1,0 +1,3 @@
+SET ARG=%1
+CP %1 %ARG:~0,-4%"GFX
+MV %ARG:~0,-4%"GFX GRAPHICS
